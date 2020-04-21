@@ -14,10 +14,19 @@
 
   <!-- p5.js -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-
+  <script>
+    function sound()
+      {
+        document.getElementById( 'sound-file' ).play() ;
+      }
+    </script>
   <title>WebLaunchpad</title>
 </head>
 <body>
-  <button type="button" class="btn btn-primary">Sound</button>
+  <button type="button" class="btn btn-primary" onclick="sound()">Sound</button> 
+  <!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
+  <audio id="sound-file" preload="auto">
+	  <source src="assets/drum_exp001.mp3" type="audio/mp3">
+  </audio>
 </body>
 </html>
