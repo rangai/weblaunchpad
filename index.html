@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <style>
+    .mod-checkbox-0001 {
+      position: relative;
+      height: 48px;
+      border-top:1px solid #777777;
+    }
+    .mod-checkbox-0001 .mod-checkbox-0001__field {
+      position: relative;
+      top: 4px;
+      left: 4px;
+      z-index: 1;
+    }
+    .mod-checkbox-0001 .mod-checkbox-0001__label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 48px;
+      padding: 12px 40px;
+      background: #dddddd;
+      box-sizing: border-box;
+      cursor: pointer;
+      z-index: 2;
+      opacity: 50%;
+    }
+    .mod-checkbox-0001 input[type="checkbox"].mod-checkbox-0001__field:checked + .mod-checkbox-0001__label {
+      background-color: #ffffdd;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,10 +53,112 @@
   <title>WebLaunchpad</title>
 </head>
 <body>
-  <button type="button" class="btn btn-primary" onclick="sound()">Sound</button> 
-  <!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
-  <audio id="sound-file" preload="auto">
-	  <source src="assets/drum_exp001.mp3" type="audio/mp3">
+  <div class="mod-list-0001">
+    <div class="mod-list-0001__group">
+      <div class="mod-list-0001__item">
+  
+        <div class="mod-checkbox-0001">
+          <input class="mod-checkbox-0001__field" id="Kick" type="checkbox" name="example" onchange="handleChange001(event)">
+          <label class="mod-checkbox-0001__label" for="Kick">KickLoop</label>
+        </div>
+  
+        <div class="mod-checkbox-0001">
+          <input class="mod-checkbox-0001__field" id="Snare" type="checkbox" name="example" onchange="handleChange002(event)">
+          <label class="mod-checkbox-0001__label" for="Snare">Snare</label>
+        </div>
+  
+        <div class="mod-checkbox-0001">
+          <input class="mod-checkbox-0001__field" id="Hihat" type="checkbox" name="example" onchange="handleChange003(event)">
+          <label class="mod-checkbox-0001__label" for="Hihat">Hihat</label>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <script>
+    function KickLoop001()
+    {
+      var x = document.getElementById('WLP_KickLoop001');
+      x.play();
+    }
+    function KickLoop001stop()
+    {
+      var x = document.getElementById('WLP_KickLoop001');
+      x.pause();
+      x.currentTime = 0;
+    }
+    function Snare001()
+    {
+      var x = document.getElementById('WLP_Snare001');
+      x.play();
+    }
+    function Snare001stop()
+    {
+      var x = document.getElementById('WLP_Snare001');
+      x.pause();
+      x.currentTime = 0;
+    }
+    function Hihat001()
+    {
+      var x = document.getElementById('WLP_Hihat001');
+      x.play();
+    }
+    function Hihat001stopstop()
+    {
+      var x = document.getElementById('WLP_Hihat001');
+      x.pause();
+      x.currentTime = 0;
+    }
+  </script>
+  <script>
+  var handleChange001 = function (event) {
+    console.log(event);
+    var checkbox = event.target;
+    console.log(checkbox);
+    console.log(checkbox.name);
+    console.log(checkbox.checked);
+  
+    if (checkbox.checked) {
+      KickLoop001();
+    } else {
+      KickLoop001stop();
+    }
+  };
+  var handleChange002 = function (event) {
+    console.log(event);
+    var checkbox = event.target;
+    console.log(checkbox);
+    console.log(checkbox.name);
+    console.log(checkbox.checked);
+  
+    if (checkbox.checked) {
+      Snare001();
+    } else {
+      Snare001stop();
+    }
+  };
+  var handleChange003 = function (event) {
+    console.log(event);
+    var checkbox = event.target;
+    console.log(checkbox);
+    console.log(checkbox.name);
+    console.log(checkbox.checked);
+  
+    if (checkbox.checked) {
+      Hihat001();
+    } else {
+      Hihat001stop();
+    }
+  };
+  </script>
+  <audio id="WLP_KickLoop001" preload loop>
+    <source src="assets/WLP_KickLoop001.mp3" type="audio/mp3">
+  </audio>
+  <audio id="WLP_Snare001" preload>
+    <source src="assets/WLP_Snare001.mp3" type="audio/mp3">
+  </audio>
+  <audio id="WLP_Hihat001" preload>
+    <source src="assets/WLP_Hihat001.mp3" type="audio/mp3">
   </audio>
 </body>
 </html>
