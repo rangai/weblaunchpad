@@ -5,8 +5,8 @@ const hihat = document.querySelector('#hihat');
 
 //シンセ生成
 const membrane = new Tone.MembraneSynth().toDestination();
-const noise = new Tone.NoiseSynth().toMaster();
-const metal = new Tone.MetalSynth().toMaster();
+const noise = new Tone.NoiseSynth().toDestination();
+const metal = new Tone.MetalSynth().toDestination();
 
 kick.addEventListener('click', () => { 
  membrane.triggerAttackRelease('C0','2n'); 
