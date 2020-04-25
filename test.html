@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.6.1/Tone.js"></script>
+  <title>Document</title>
+  <style>
+    #container {
+      position:absolute;
+      height:200px;
+      border:5px solid black;
+    }
+    .whitenote{
+      height:100%;
+      width:50px;
+      background:white;
+      float:left;
+      border-right:1px solid black;
+      position: relative;
+    }
+    .blacknote{
+      position: absolute;
+      height:65%;
+      width:55%;
+      z-index: 1;
+      background: black;
+      left:68%;
+    }
+  </style>
+</head>
+<body>
+  <div id='container'>
+  </div>
+  <script src="test.js"></script>
+</body>
+</html>
