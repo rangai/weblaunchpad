@@ -8,9 +8,13 @@ const membrane = new Tone.MembraneSynth().toDestination();
 const noise = new Tone.NoiseSynth().toDestination();
 const metal = new Tone.MetalSynth().toDestination();
 
-kick.addEventListener('click', () => { 
- membrane.triggerAttackRelease('C0','2n'); 
-}, false);
+var kickloop = new Tone.Loop(function(time){
+	membrane.triggerAttackRelease('C0','2n', time);
+}, '4n')
+
+kickloop.start(0).stop('2m')
+
+kick.addEventListener('click', e => Tone.Transport.toggle());
 
 snare.addEventListener('click', () => { 
  noise.triggerAttackRelease('8n');  
