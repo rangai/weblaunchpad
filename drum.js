@@ -7,10 +7,13 @@ const hihat = document.querySelector('#hihat');
 
 const test = document.querySelector('#test');
 
+const init = document.querySelector('#init');
+
 //シンセ生成
 const membrane = new Tone.MembraneSynth().toDestination();
 const noise = new Tone.NoiseSynth().toDestination();
 const metal = new Tone.MetalSynth().toDestination();
+const synth = new Tone.Synth().toDestination()
 
 kick.addEventListener('click', () => {
   for(let i=0;i<16;i++){
@@ -37,3 +40,7 @@ var sloop = new Tone.Loop(function(time){
 }, "2n")
 sloop.start(0)
 snare_loop.addEventListener('click', e => Tone.Transport.toggle())
+
+init.addEventListener('click', () => { 
+  synth.triggerAttackRelease('C4', '8n') 
+}, false);
