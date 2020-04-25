@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    #pad {
+      background: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    li {
+      margin: 5px;
+      background: #666;
+      border: 0px solid #333;
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+      color: #fff;
+      box-shadow: 5px 5px 5px rgba(0,0,0, 0.3);
+    }
+    
+    li:hover {
+      opacity: 0.7;
+    }
+    
+    .b_key {
+      position: absolute;
+      z-index: 10;
+      top: 10px;
+      margin: 0 -20px;
+      padding: 0;
+      background: #000;
+      border: 1px solid #fff;
+      color: #fff;
+      width: 35px;
+      height: 75px;
+      text-align: center;
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.6.1/Tone.js"></script>
+  <ul id="pad">
+    <li id="kick">Kick</li>
+    <li id="snare">Snare</li>
+    <li id="hihat">Hi-Hat</li>
+ </ul>
+ <script src="drum.js"></script>
+</body>
+</html>
