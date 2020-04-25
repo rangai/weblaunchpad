@@ -1,6 +1,8 @@
 //DOM
 const kick = document.querySelector('#kick');
+const kick_loop = document.querySelector('#kick_loop');
 const snare = document.querySelector('#snare');
+
 const hihat = document.querySelector('#hihat');
 
 const test = document.querySelector('#test');
@@ -17,19 +19,21 @@ kick.addEventListener('click', () => {
 },false);
 
 snare.addEventListener('click', () => { 
- noise.triggerAttackRelease('8n');  
+  noise.triggerAttackRelease('8n');  
 }, false);
 
 hihat.addEventListener('click', () => { 
- metal.triggerAttackRelease('32n'); 
+  metal.triggerAttackRelease('32n'); 
 }, false);
 
-//create a loop
-var loop = new Tone.Loop(function(time){
+var kloop = new Tone.Loop(function(time){
 	membrane.triggerAttackRelease("C1", "8n", time)
 }, "4n")
+kloop.start(0)
+kick_loop.addEventListener('click', e => Tone.Transport.toggle())
 
-//play the loop between 0-2m on the transport
-loop.start(0)
-
-test.addEventListener('click', e => Tone.Transport.toggle())
+var sloop = new Tone.Loop(function(time){
+	noise.triggerAttackRelease("8n", time)
+}, "2n")
+sloop.start(0)
+snare_loop.addEventListener('click', e => Tone.Transport.toggle())

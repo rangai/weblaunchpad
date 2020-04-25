@@ -6,7 +6,7 @@
   <title>Document</title>
   
   <style>
-    #pad {
+    #kick_pad, #snare_pad, #hihat_pad, #test_pad {
       background: #333;
       padding: 10px;
       display: flex;
@@ -51,16 +51,35 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.6.1/Tone.js"></script>
-  <ul id="pad">
+
+  <ul id="kick_pad">
     <li id="kick">Kick</li>
-    <li id="kick"></li>
-    <li id="snare">Snare</li>
-    <li id="snare"></li>
-    <li id="snare"></li>
-    <li id="hihat">Hi-Hat</li>
-    <li id="hihat"></li>
-    <li id="test">test</li>
+    <li id="kick_loop">Loop</li>
+    <li id="kick2"></li>
+    <li id="kick3"></li>
  </ul>
- <script src="drum.js"></script>
+
+ <ul id="snare_pad">
+  <li id="snare">Snare</li>
+  <li id="snare_loop">Loop</li>
+  <li id="snare2"></li>
+  <li id="snare3"></li>
+</ul>
+
+<ul id="hihat_pad">
+  <li id="hihat">Hi-Hat</li>
+  <li id="hihat_loop">Loop</li>
+  <li id="hihat2"></li>
+  <li id="hihat3"></li>
+</ul>
+
+<ul id="test_pad">
+  <li id="test">test</li>
+  <li id="test1"></li>
+  <li id="test2"></li>
+  <li id="init">init</li>
+</ul>
+
+<script src="drum.js"></script>
 </body>
 </html>
