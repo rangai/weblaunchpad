@@ -50,7 +50,7 @@ var sloop = new Tone.Loop(function(time){
   const noise = new Tone.NoiseSynth().toDestination();
 	noise.triggerAttackRelease("8n", time)
 }, "2n")
-sloop.start(Tone.Time("2m")+Tone.Time("2n"))
+sloop.start(Tone.Time("2m")+Tone.Time("4n"))
 snare_loop.addEventListener('click', () => Tone.Transport.toggle())
 
 hihat.addEventListener('click', () => {
