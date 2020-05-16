@@ -19,7 +19,6 @@
 	--border: 1vmin solid var(--black);
 	--borderRad: 2px;
 
-
 }
 * {box-sizing: border-box;}
 body {
@@ -33,19 +32,6 @@ body {
 }
 @media screen and (max-width: 570px) {
 	#boombox {max-width: 600px;}
-}
-.boombox-handle {
-	margin: 0px 5vw; height: 12vh;
-	background:
-		var(--white)
-		linear-gradient(180deg,
-			var(--boxHigh) 4vmin,
-			var(--black) 4vmin,
-			var(--black) 5vmin,
-			var(--white) 5vmin)
-		no-repeat;
-	border: var(--border); border-bottom-width: 0px;
-	border-radius: var(--borderRad);
 }
 .boombox-body {
 	/*gradient with two circles for speakers*/
@@ -135,15 +121,6 @@ label[for="panner"] {grid-area: panlab; margin-top: 15px;}
 	label[for="volume"], label[for="panner"] {margin-top: 0px;}
 	.control-volume {margin-bottom: 20px;}
 }
-
-.control-power {
-	grid-area: power; align-self: center;
-	width: 40px; height: 40px;
-	border: 3px solid var(--black); border-radius: 20px;
-	cursor: pointer;
-}
-.control-power span {display: none;}
-
 
 /* tape area ~~~~~~~~~~~~~~~~~~~~~~ */
 .tape {
