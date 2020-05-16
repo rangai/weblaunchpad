@@ -108,15 +108,15 @@ label[for="panner"] {grid-area: panlab; margin-top: 15px;}
 /* tape area ~~~~~~~~~~~~~~~~~~~~~~ */
 .tape {
 	display: grid;
-	grid-template-rows: 24vh 6vh;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 0vh 6vh;
+
 	grid-template-areas: "tape tape tape tape tape"
 		"back rewind play ff next";
 
-	width: 26vw; margin: 0px auto;
+	margin: 0px auto;
 	background: var(--boxMain) no-repeat center center;
 	background-size: 100% 100%, 100% 100%, 40% 100%, 100% 100%, 100% 100%;
-	border: var(--border); border-bottom-width: 0px;
+
 	border-radius: var(--borderRad);
 	max-width: 300px;
 }
