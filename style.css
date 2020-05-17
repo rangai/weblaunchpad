@@ -102,8 +102,8 @@ label[for="panner"] {grid-area: panlab; margin-top: 15px;}
 	display: grid;
 	grid-template-rows: 0vh 6vh;
 
-	grid-template-areas: "tape tape tape tape tape"
-		"back rewind play ff next";
+	grid-template-areas: "tape tape tape tape"
+		"play0 play1 play2 play3";
 
 	margin: 0px auto;
 	background: var(--boxMain) no-repeat center center;
@@ -123,7 +123,10 @@ audio {
 	border: none;
 }
 [class^="tape-controls"] span {display: none;}
-.tape-controls-play {grid-area: play;}
+.tape-controls-play0 {grid-area: play0;}
+.tape-controls-play1 {grid-area: play1;}
+.tape-controls-play2 {grid-area: play2;}
+.tape-controls-play3 {grid-area: play3;}
 
 /* ~~~~~~~~~~~~~~~~ All the crazy range styling */
 input[type=range] {
