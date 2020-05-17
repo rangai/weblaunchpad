@@ -1,5 +1,3 @@
-console.clear();
-
 // instigate our audio context
 
 // for cross browser
@@ -7,7 +5,10 @@ const AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioCtx;
 
 // load some sound
-const audioElement = document.querySelector('audio');
+const audioElement0 = document.querySelector('audio');
+const audioElement1 = document.querySelector('audio');
+const audioElement2 = document.querySelector('audio');
+const audioElement3 = document.querySelector('audio');
 let track;
 
 const playButton0 = document.querySelector('.tape-controls-play0');
@@ -27,11 +28,11 @@ playButton0.addEventListener('click', function() {
 	}
 
 	if (this.dataset.playing === 'false') {
-		audioElement.play();
+		audioElement0.play();
 		this.dataset.playing = 'true';
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
-		audioElement.pause();
+		audioElement0.pause();
 		this.dataset.playing = 'false';
 	}
 
@@ -51,11 +52,11 @@ playButton1.addEventListener('click', function() {
 	}
 
 	if (this.dataset.playing === 'false') {
-		audioElement.play();
+		audioElement1.play();
 		this.dataset.playing = 'true';
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
-		audioElement.pause();
+		audioElement1.pause();
 		this.dataset.playing = 'false';
 	}
 
@@ -75,11 +76,11 @@ playButton2.addEventListener('click', function() {
 	}
 
 	if (this.dataset.playing === 'false') {
-		audioElement.play();
+		audioElement2.play();
 		this.dataset.playing = 'true';
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
-		audioElement.pause();
+		audioElement2.pause();
 		this.dataset.playing = 'false';
 	}
 
@@ -99,11 +100,11 @@ playButton3.addEventListener('click', function() {
 	}
 
 	if (this.dataset.playing === 'false') {
-		audioElement.play();
+		audioElement3.play();
 		this.dataset.playing = 'true';
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
-		audioElement.pause();
+		audioElement3.pause();
 		this.dataset.playing = 'false';
 	}
 
@@ -113,15 +114,30 @@ playButton3.addEventListener('click', function() {
 }, false);
 
 // if track ends
-audioElement.addEventListener('ended', () => {
+audioElement0.addEventListener('ended', () => {
 	playButton0.dataset.playing = 'false';
 	playButton0.setAttribute( "aria-checked", "false" );
+}, false);
+
+audioElement1.addEventListener('ended', () => {
+	playButton1.dataset.playing = 'false';
+	playButton1.setAttribute( "aria-checked", "false" );
+}, false);
+
+audioElement2.addEventListener('ended', () => {
+	playButton2.dataset.playing = 'false';
+	playButton2.setAttribute( "aria-checked", "false" );
+}, false);
+
+audioElement3.addEventListener('ended', () => {
+	playButton3.dataset.playing = 'false';
+	playButton3.setAttribute( "aria-checked", "false" );
 }, false);
 
 function init() {
 
 	audioCtx = new AudioContext();
-	track = audioCtx.createMediaElementSource(audioElement);
+	track = audioCtx.createMediaElementSource(audioElement0);
 
 	// volume
 	const gainNode = audioCtx.createGain();
