@@ -5,10 +5,10 @@ const AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioCtx;
 
 // load some sound
-const audioElement0 = document.querySelector('audio');
-const audioElement1 = document.querySelector('audio');
-const audioElement2 = document.querySelector('audio');
-const audioElement3 = document.querySelector('audio');
+const audioElement0 = document.querySelector('#audio0');
+const audioElement1 = document.querySelector('#audio1');
+const audioElement2 = document.querySelector('#audio2');
+const audioElement3 = document.querySelector('#audio3');
 let track;
 
 const playButton0 = document.querySelector('.tape-controls-play0');
