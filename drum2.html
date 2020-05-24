@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    #kick_pad, #snare_pad, #hihat_pad, #test_pad {
+      background: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    li {
+      margin: 5px;
+      background: #666;
+      border: 0px solid #333;
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+      color: #fff;
+      box-shadow: 5px 5px 5px rgba(0,0,0, 0.3);
+    }
+    
+    li:hover {
+      opacity: 0.7;
+    }
+    
+    .b_key {
+      position: absolute;
+      z-index: 10;
+      top: 10px;
+      margin: 0 -20px;
+      padding: 0;
+      background: #000;
+      border: 1px solid #fff;
+      color: #fff;
+      width: 35px;
+      height: 75px;
+      text-align: center;
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+  <audio src="assets/WLP_KickLoop001.mp3" type="audio/mpeg" id="audio0"></audio>
+  <audio src="assets/WLP_Hihat001.mp3" type="audio/mpeg" id="audio1"></audio>
+  <audio src="assets/WLP_Snare001.mp3" type="audio/mpeg" id="audio2"></audio>
+  <audio src="assets/WLP_Hihat001.mp3" type="audio/mpeg" id="audio3"></audio>
+  <ul id="kick_pad">
+    <li id="kick0">kick0</li>
+    <li id="kick1">kick1</li>
+    <li id="kick2">kick2</li>
+    <li id="kick3">kick3</li>
+  </ul>
+
+ <ul id="snare_pad">
+  <li id="snare0">snare0</li>
+  <li id="snare1">snare1</li>
+  <li id="snare2">snare2</li>
+  <li id="snare3">snare3</li>
+</ul>
+
+<ul id="hihat_pad">
+  <li id="hihat0">hihat0</li>
+  <li id="hihat1">hihat1</li>
+  <li id="hihat2">hihat2</li>
+  <li id="hihat3">hihat3</li>
+</ul>
+
+<ul id="test_pad">
+  <li id="test0">test0</li>
+  <li id="test1">test1</li>
+  <li id="test2">test2</li>
+  <li id="test3">test3</li>
+</ul>
+
+<script src="drum2.js"></script>
+</body>
+</html>
