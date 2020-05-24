@@ -29,11 +29,6 @@ const audioElement2 = document.querySelector('#audio2');
 const audioElement3 = document.querySelector('#audio3');
 let track;
 
-const playButton0 = document.querySelector('.tape-controls-play0');
-const playButton1 = document.querySelector('.tape-controls-play1');
-const playButton2 = document.querySelector('.tape-controls-play2');
-const playButton3 = document.querySelector('.tape-controls-play3');
-
 // play pause audio
 kick0.addEventListener('click', function() {
   if(!audioCtx) {
@@ -59,7 +54,7 @@ kick0.addEventListener('click', function() {
 
 }, false);
 
-kick1.addEventListener('click', function() {
+snare0.addEventListener('click', function() {
   if(!audioCtx) {
 		init();
 	}
@@ -83,7 +78,7 @@ kick1.addEventListener('click', function() {
 
 }, false);
 
-kick2.addEventListener('click', function() {
+hihat0.addEventListener('click', function() {
   if(!audioCtx) {
 		init();
 	}
@@ -107,29 +102,6 @@ kick2.addEventListener('click', function() {
 
 }, false);
 
-kick3.addEventListener('click', function() {
-  if(!audioCtx) {
-		init();
-	}
-
-	// check if context is in suspended state (autoplay policy)
-	if (audioCtx.state === 'suspended') {
-		audioCtx.resume();
-	}
-
-	if (this.dataset.playing === 'false') {
-		audioElement3.play();
-		this.dataset.playing = 'true';
-	// if track is playing pause it
-	} else if (this.dataset.playing === 'true') {
-		audioElement3.pause();
-		this.dataset.playing = 'false';
-	}
-
-	let state = this.getAttribute('aria-checked') === "true" ? true : false;
-	this.setAttribute( 'aria-checked', state ? "false" : "true" );
-
-}, false);
 
 // if track ends
 audioElement0.addEventListener('ended', () => {
@@ -153,7 +125,6 @@ audioElement3.addEventListener('ended', () => {
 }, false);
 
 function init() {
-
 	audioCtx = new AudioContext();
 	track = audioCtx.createMediaElementSource(audioElement0);
 }
